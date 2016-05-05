@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20160505190625) do
 
   create_table "howls", force: :cascade do |t|
     t.string   "message",    null: false
-    t.text     "howl_image", null: false
+    t.text     "howl_image"
     t.integer  "wolf_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
