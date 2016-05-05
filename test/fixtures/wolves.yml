@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: "Aaron Carter"
+  profile_image: "https://s3-us-west-2.amazonaws.com/wolfimages/wolf-1.jpg"
+  bio: "Now walking on the front streets"
+
