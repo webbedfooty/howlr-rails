@@ -32,7 +32,7 @@ class HowlsControllerTest < ActionController::TestCase
   # end
 
   test "should get update" do
-    patch :update, {'id' => howls(:one).id}, howl: {'message' => howls(:one).message, 'wolf_id' => howls(:one).wolf_id}
+    patch :update, {'id' => howls(:one).id}, howl: {'message' => howls(:one).message, 'howl_image' => howls(:one).howl_image, 'wolf_id' => howls(:one).wolf_id}
     assert_redirected_to howl_path(assigns(:howl))
  end
 
@@ -40,7 +40,7 @@ class HowlsControllerTest < ActionController::TestCase
     delete :destroy, {'id' => howls(:one).id}
     assert_redirected_to howls_path
   end
-  
+
 # 1) Error:
 # HowlsControllerTest#test_should_get_update:
 # ActionController::UrlGenerationError: No route matches {:action=>"update", :controller=>"howls", :howl=>{"message"=>"Hooooooooowwwwwl", "wolf_id"=>"1"}, :id=>nil}

@@ -3,6 +3,10 @@ class WolvesController < ApplicationController
     @wolves=Wolf.all
   end
 
+  def new
+    @wolf = Wolf.new
+  end
+
   def create
     @wolf = Wolf.new(wolf_params)
     if @wolf.save
@@ -11,11 +15,6 @@ class WolvesController < ApplicationController
       flash.now[:alert] = "Couldn't save"
       render :new
     end
-  end
-
-
-  def new
-    @wolf = Wolf.new
   end
 
 

@@ -3,6 +3,10 @@ class HowlsController < ApplicationController
     @howls=Howl.all
   end
 
+  def new
+    @howl = Howl.new
+  end
+
   def create
     @howl = Howl.new(howl_params)
     if @howl.save
@@ -11,11 +15,6 @@ class HowlsController < ApplicationController
       flash.now[:alert] = "Couldn't save"
       render :new
     end
-  end
-
-
-  def new
-    @howl = Howl.new
   end
 
 
