@@ -1,2 +1,8 @@
 <h1>Wolves#edit</h1>
 <p>Find me in app/views/wolves/edit.html.erb</p>
+
+<h1>Edit <%=@wolf.name%></h1>
+
+<%= render "layouts/form" %>
+
+<%= link_to "Delete This Wolf", wolf_path(@wolf), method: :delete %>
