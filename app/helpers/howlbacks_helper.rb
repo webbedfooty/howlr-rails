@@ -1,0 +1,2 @@
+module HowlbacksHelper
+end

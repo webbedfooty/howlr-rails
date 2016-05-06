@@ -1,0 +1,22 @@
+<h1>HOWLBACKS</h1>
+
+<% if flash[:notice] %>
+  <div class="flash notice">
+    <p><%= flash[:notice] %></p>
+  </div>
+<% end %>
+
+<% if @howlbacks.any? %>
+	<ul>
+		<% @howlbacks.each do |h| %>
+			<li>
+			<img src="<%= h.wolf.profile_image %>" style="max-width: 50px">
+			<%= link_to h.response_message, howlback_path(h) %>
+			<%= h.bio %>
+			</li>
+		<% end %>
+	</ul>
+<% else %>
+	<p>Sorry.  No howlbacks here!</p>
+<% end %>
+<p><%= link_to "New Posting", new_howlback_path %></p>
