@@ -1,3 +1,18 @@
-<h1>Howls show</h1>
+<h1><%= @howl.wolf.name %></h1>
 
-<p>Find me in app/views/howls/show.html.erb</p>
+<% if flash[:notice] %>
+  <div class="flash notice">
+    <p><%= flash[:notice] %></p>
+  </div>
+<% end %>
+
+
+<p><%= @howl.wolf.name %></p>
+<img src="<%= @howl.wolf.profile_image %>" style="max-width: 50px; border-radius:50%"><br>
+<img src="<%= @howl.howl_image %>" style="max-width: 150px;">
+<p><%= @howl.message %></p>
+
+
+
+<p><%= link_to "Edit Posting", edit_howl_path(@howl) %></p>
+<p><%= link_to "All Postings", :wolves %></p>

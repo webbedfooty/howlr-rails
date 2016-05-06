@@ -20,6 +20,7 @@ class HowlsController < ApplicationController
 
   def show
     @howl = Howl.find(params[:id])
+    @wolf = Wolf.find(params[:id])
   end
 
   def update

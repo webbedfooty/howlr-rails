@@ -1,1 +1,27 @@
-<h1>Howls index</h1>
+<h1>HOWLR - ALL HOWLS</h1>
+<h3>These are your last five howls from your pack.</h3>
+
+<% if flash[:notice] %>
+  <div class="flash notice">
+    <p><%= flash[:notice] %></p>
+  </div>
+<% end %>
+
+<% if @howls.any? %>
+	<ul>
+		<% @howls.each do |h| %>
+			<li>
+				<%= h.wolf.name %><br>
+				<img src="<%= h.wolf.profile_image %>" style="max-width: 50px; border-radius:50%"><br>
+				<img src="<%= h.howl_image %>" style="max-width: 150px;"><br>
+				<%= h.message %>
+			</li>
+		<% end %>
+	</ul>
+<% else %>
+	<p>Sorry.  No howls here!</p>
+<% end %>
+<p><%= link_to "New Posting", new_wolf_path %></p>
+
+
+
