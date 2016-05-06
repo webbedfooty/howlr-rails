@@ -1,2 +1,17 @@
-<h1>Wolves#show</h1>
-<p>Find me in app/views/wolves/show.html.erb</p>
+
+<h1><%= @wolf.name %></h1>
+
+<% if flash[:notice] %>
+  <div class="flash notice">
+    <p><%= flash[:notice] %></p>
+  </div>
+<% end %>
+
+
+<p>Name: <%= @wolf.name %></p>
+<img src="<%= @wolf.profile_image %>" style="max-width: 150px;">
+<p>Bio: <%= @wolf.bio %></p>
+
+
+<p><%= link_to "Edit Posting", edit_wolf_path(@wolf) %></p>
+<p><%= link_to "All Postings", :wolves %></p>

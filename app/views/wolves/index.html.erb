@@ -1,2 +1,23 @@
-<h1>Wolves#index</h1>
-<p>Find me in app/views/wolves/index.html.erb</p>
+<h1>HOWLR - ALL WOLVES</h1>
+<h3>You have <%= Wolf.count %> wolves in your pack</h3>
+
+<% if flash[:notice] %>
+  <div class="flash notice">
+    <p><%= flash[:notice] %></p>
+  </div>
+<% end %>
+
+<% if @wolves.any? %>
+	<ul>
+		<% @wolves.each do |w| %>
+			<li>
+			<img src="<%= w.profile_image %>" style="max-width: 50px">
+			<%= link_to w.name, wolf_path(w) %>
+			<%= w.bio %>
+			</li>
+		<% end %>
+	</ul>
+<% else %>
+	<p>Sorry.  No wolves here!</p>
+<% end %>
+<p><%= link_to "New Posting", new_wolf_path %></p>
