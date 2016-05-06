@@ -3,6 +3,10 @@ class WolvesController < ApplicationController
     @wolves=Wolf.all
   end
 
+  def new
+    @wolf = Wolf.new
+  end
+
   def create
     @wolf = Wolf.new(wolf_params)
     if @wolf.save
@@ -14,18 +18,13 @@ class WolvesController < ApplicationController
   end
 
 
-  def new
-    @wolf = Wolf.new
-  end
-
-
   def show
     @wolf = Wolf.find(params[:id])
   end
 
   def update
     @wolf = Wolf.find(params[:id])
-    if @wolf.update(wolf_params)
+    if @wolf.update_attributes(wolf_params)
       redirect_to wolf_path(@wolf), notice: "Successfully Updated!!!!"
     else
       flash.now[:alert]="Couldn't update."

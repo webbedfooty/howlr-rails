@@ -1,0 +1,27 @@
+<%= form_for @wolf do |w| %>
+<% if w.object.errors.any?%>
+  <ul>
+    <% w.object.errors.full_messages.each do |x|%>
+      <li>Error: <%= x %></li>
+    <% end %>
+  </ul>
+  <% end %>
+
+  <div>
+    <%= w.label :name %>
+    <%= w.text_field :name %>
+  </div>
+
+  <div>
+    <%= w.label :profile_image %>
+    <%= w.text_field :profile_image %>
+  </div>
+
+  <div>
+    <%= w.label :bio %>
+    <%= w.text_field :bio %>
+  </div>
+  <div>
+    <%= w.submit %>
+  </div>
+<% end %>

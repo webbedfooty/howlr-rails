@@ -5,3 +5,7 @@ one:
   profile_image: "https://s3-us-west-2.amazonaws.com/wolfimages/wolf-1.jpg"
   bio: "Now walking on the front streets"
 
+wolves:
+  name: "Aron Carter"
+  profile_image: "https://s3-us-west-2.amazonaws.com/wolfimages/wolf-1.jpg"
+  bio: "Now walking on the front streets"

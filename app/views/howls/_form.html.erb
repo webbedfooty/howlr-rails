@@ -1,0 +1,27 @@
+<%= form_for @howl do |h| %>
+<% if h.object.errors.any?%>
+  <ul>
+    <% h.object.errors.full_messages.each do |x|%>
+      <li>Error: <%= x %></li>
+    <% end %>
+  </ul>
+  <% end %>
+
+  <div>
+    <%= h.label :message %>
+    <%= h.text_field :message %>
+  </div>
+
+  <div>
+    <%= h.label :howl_image %>
+    <%= h.text_field :howl_image %>
+  </div>
+
+  <div>
+    <%= h.label :wolf_id %>
+    <%= h.text_field :wolf_id %>
+  </div>
+  <div>
+    <%= h.submit %>
+  </div>
+<% end %>

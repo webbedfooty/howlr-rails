@@ -3,6 +3,10 @@ class HowlsController < ApplicationController
     @howls=Howl.all
   end
 
+  def new
+    @howl = Howl.new
+  end
+
   def create
     @howl = Howl.new(howl_params)
     if @howl.save
@@ -14,18 +18,13 @@ class HowlsController < ApplicationController
   end
 
 
-  def new
-    @howl = Howl.new
-  end
-
-
   def show
     @howl = Howl.find(params[:id])
   end
 
   def update
     @howl = Howl.find(params[:id])
-    if @howl.update(howl_params)
+    if @howl.update_attributes(howl_params)
       redirect_to howl_path(@howl), notice: "Successfully Updated!!!!"
     else
       flash.now[:alert]="Couldn't update."

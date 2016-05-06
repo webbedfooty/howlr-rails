@@ -1,2 +1,7 @@
 <h1>Howls#edit</h1>
-<p>Find me in app/views/howls/edit.html.erb</p>
+
+<h1>Edit <%=@howl.message%></h1>
+
+<%= render "form" %>
+
+<%= link_to "Delete This Howl", howl_path(@howl), method: :delete %>
