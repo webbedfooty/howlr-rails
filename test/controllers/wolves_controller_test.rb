@@ -27,7 +27,8 @@ class WolvesControllerTest < ActionController::TestCase
   end
 
   test "should get update" do
-    patch :update, {'id' => wolves(:one).id}, wolf: {name: "Something", profile_image: "hey", bio: "Because"}
+    @wolf = wolves(:one)
+    patch :update, id:@wolf, wolf: {name: "Something", profile_image: "hey", bio: "Because"}
     assert_redirected_to wolf_path(assigns(:wolf))
  end
 

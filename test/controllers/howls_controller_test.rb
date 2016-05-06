@@ -32,7 +32,8 @@ class HowlsControllerTest < ActionController::TestCase
   # end
 
   test "should get update" do
-    patch :update, {'id' => howls(:one).id}, howl: {'message' => howls(:one).message, 'howl_image' => howls(:one).howl_image, 'wolf_id' => howls(:one).wolf_id}
+    @howl = howls(:one)
+    patch :update, id:@howl, howl: {message: "Something"}
     assert_redirected_to howl_path(assigns(:howl))
  end
 

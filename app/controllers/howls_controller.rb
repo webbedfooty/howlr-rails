@@ -24,7 +24,7 @@ class HowlsController < ApplicationController
 
   def update
     @howl = Howl.find(params[:id])
-    if @howl.update(howl_params)
+    if @howl.update_attributes(howl_params)
       redirect_to howl_path(@howl), notice: "Successfully Updated!!!!"
     else
       flash.now[:alert]="Couldn't update."
