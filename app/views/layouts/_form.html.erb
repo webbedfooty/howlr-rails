@@ -9,7 +9,7 @@
 
   <div>
     <%= w.label :name %>
-    <%= w.collection_select :name, Wolf.order(:name),:id,:name, include_blank: true %>
+    <%= w.text_field :name %>
   </div>
 
   <div>
