@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505190625) do
+ActiveRecord::Schema.define(version: 20160506014506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "howlbacks", force: :cascade do |t|
+    t.string   "response_message", null: false
+    t.text     "howlback_image"
+    t.integer  "wolf_id",          null: false
+    t.integer  "howl_id",          null: false
+    t.integer  "likes",            null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
   create_table "howls", force: :cascade do |t|
     t.string   "message",    null: false
