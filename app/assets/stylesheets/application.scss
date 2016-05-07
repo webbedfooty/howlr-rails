@@ -6,3 +6,8 @@ $primary-color: color("blue", "lighten-2") !default;
 * {
 	outline: 1px solid red;
 }
+
+.container .row {
+	margin: 0;
+
+}

@@ -1,16 +1,18 @@
-<h1><%= @wolf.name %></h1>
-
-<% if flash[:notice] %>
-  <div class="flash notice">
-    <p><%= flash[:notice] %></p>
-  </div>
-<% end %>
-
-
-<p>Name: <%= @wolf.name %></p>
-<img src="<%= @wolf.profile_image %>" style="max-width: 150px; border-radius:50%">
-<p>Bio: <%= @wolf.bio %></p>
-
-
-<p><%= link_to "Edit Posting", edit_wolf_path(@wolf) %></p>
-<p><%= link_to "All Postings", :wolves %></p>
+	<div class="container">
+		<div class="row">
+		<% if flash[:notice] %>
+		  <div class="flash notice col 12">
+		    <p><%= flash[:notice] %></p>
+		  </div>
+		<% end %>
+			<div class="col sm4">
+				<img src="<%= @wolf.profile_image %>" style="max-width: 50px; border-radius:50%">
+			</div>
+			<div class="col s8 right">
+				<h4><%= @wolf.name %></h4>
+				<p>Bio: <%= @wolf.bio %></p>
+			</div>
+		</div>
+		<div class="row"><p><%= link_to "Edit Wolf", edit_wolf_path(@wolf) %></p>
+		<p><%= link_to "Go To Pack", :wolves %></p>
+	</div>
