@@ -17,7 +17,7 @@
 	<% if @wolves.any? %>
 			<% @wolves.each do |w| %>
 			<li class="collection-item avatar">
-	      <img src="<%= w.profile_image %>" alt="" class="circle">
+	      <img src="<%= w.profile_image %>" alt="" class="circle wolfProfileImageSmall">
 	      <span class="title"><%= link_to w.name, wolf_path(w) %></span>
 	      <p><%= w.bio %></p>
 	      <a href="#!" class="secondary-content"><i class="material-icons">3 howls</i></a>

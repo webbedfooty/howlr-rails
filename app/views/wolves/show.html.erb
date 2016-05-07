@@ -6,13 +6,19 @@
 		  </div>
 		<% end %>
 			<div class="col sm4">
-				<img src="<%= @wolf.profile_image %>" style="max-width: 50px; border-radius:50%">
+				<img class="wolfProfileImageBig" src="<%= @wolf.profile_image %>">
 			</div>
 			<div class="col s8 right">
 				<h4><%= @wolf.name %></h4>
-				<p>Bio: <%= @wolf.bio %></p>
+				<p><%= @wolf.bio %></p>
 			</div>
 		</div>
-		<div class="row"><p><%= link_to "Edit Wolf", edit_wolf_path(@wolf) %></p>
-		<p><%= link_to "Go To Pack", :wolves %></p>
+		<div class="row">
+			<p><%= link_to "Edit Wolves", edit_wolf_path(@wolf) %></p>
+			<p><%= link_to "Delete Wolves", wolf_path(@wolf), :method=>:delete %></p>
+			<p><%= link_to "Go To Pack", :wolves %></p>
+
 	</div>
+
+
+

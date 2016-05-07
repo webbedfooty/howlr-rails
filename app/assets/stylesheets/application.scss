@@ -9,5 +9,13 @@ $primary-color: color("blue", "lighten-2") !default;
 
 .container .row {
 	margin: 0;
+}
 
+.wolfProfileImageSmall {
+	max-width:50px;
+}
+
+.wolfProfileImageBig {
+	max-width:100px;
+	border-radius: 50%;
 }
