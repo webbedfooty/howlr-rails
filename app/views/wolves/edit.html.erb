@@ -1,7 +1,7 @@
-<h1>Wolves#edit</h1>
+<div class="container">
+	<h4>Edit <%=@wolf.name%></h4>
 
-<h1>Edit <%=@wolf.name%></h1>
+	<%= render "form" %>
 
-<%= render "form" %>
-
-<%= link_to "Delete This Wolf", wolf_path(@wolf), method: :delete %>
+	<%= link_to "Delete This Wolf", wolf_path(@wolf), method: :delete %>
+</div>
