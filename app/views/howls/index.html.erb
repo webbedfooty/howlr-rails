@@ -1,26 +1,57 @@
-<h1>HOWLR - ALL HOWLS</h1>
-<h3>These are your last five howls from your pack.</h3>
+<div class="container">
+	<div class="row">
+		<div class="col s12 m6 offset-m3">
+	    <a class="waves-effect waves-light btn left red darken-4" href="/howls/new">Need to howl?</a>
+	    <a class="waves-effect waves-light btn right red darken-4" href="/wolves">See the Pack</a>
+		</div>
+		<div class="col s12 m6 offset-m3">
+	    <h4>Here are the last five<br>howls from your pack:</h4>
+	  </div>
+	<% if flash[:notice] %>
+	  <div class="flash notice">
+	    <p><%= flash[:notice] %></p>
+	  </div>
+	<% end %>
+	</div>
+</div>
 
-<% if flash[:notice] %>
-  <div class="flash notice">
-    <p><%= flash[:notice] %></p>
-  </div>
-<% end %>
 
-<% if @howls.any? %>
-	<ul>
-		<% @howls.each do |h| %>
-			<li>
-				<%= h.wolf.name %><br>
-				<img class="wolfProfileImageSmall" src="<%= h.wolf.profile_image %>"><br>
-				<img src="<%= h.howl_image %>"><br>
-				<%= h.message %>
-			</li>
-				<p><%= link_to "Edit Howls", edit_howl_path(h) %></p>
-				<p><%= link_to "Delete Howls", howl_path(h), :method=>:delete %></p>
+	<div class="container">
+		<% if @howls.any? %>
+				<% @howls.each do |h| %>
+          <div class="card">
+            <div class="card-content howlCard">
+							<span class="card-title">
+								<%= h.wolf.name %>
+							</span>
+							<img class="wolfProfileImageSmall circle right" src="<%= h.wolf.profile_image %>">
+							<a class="right secondary-content">Today</a><br>
+						<% if h.howl_image? %>
+							<img class="responsive-img" src="<%= h.howl_image %>">
+						<% end %>
+						<%= h.message %>
+					</div>
+					<div class="col sm12 card-action">
+              <span class="howlBack">Howl Back (0)</span>
+              <span class="likes">Likes (0)</span>
+              <span class="secondary-content">
+								<%= link_to edit_howl_path(h) do %>
+		     				 <i class="tiny material-icons right">edit_mode</i>
+								<% end %>
+								<%= link_to howl_path(h) do %>
+		     				 <i class="tiny material-icons right">delete</i>
+								<% end %>
+		     			</span>
+					</div>
+				</div>
+			<% end %>
+
+		<% else %>
+		<div class="row">
+			<p>Sorry.  No howls here!</p>
 		<% end %>
-	</ul>
-<% else %>
-	<p>Sorry.  No howls here!</p>
-<% end %>
-<p><%= link_to "New Posting", new_wolf_path %></p>
+		<p><%= link_to "New Posting", new_wolf_path %></p>
+	</div>
+</div>
+
+

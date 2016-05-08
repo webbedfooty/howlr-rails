@@ -3,6 +3,7 @@
 @import "materialize/components/color";
 $primary-color: color("blue", "lighten-2") !default;
 
+
 .container .row {
 	margin: 0;
 }
@@ -14,4 +15,8 @@ $primary-color: color("blue", "lighten-2") !default;
 .wolfProfileImageBig {
 	max-width:100px;
 	border-radius: 50%;
+}
+
+i {
+	width: 14px;
 }
