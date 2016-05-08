@@ -12,16 +12,15 @@
 		<% @howls.each do |h| %>
 			<li>
 				<%= h.wolf.name %><br>
-				<img src="<%= h.wolf.profile_image %>" style="max-width: 50px; border-radius:50%"><br>
-				<img src="<%= h.howl_image %>" style="max-width: 150px;"><br>
+				<img class="wolfProfileImageSmall" src="<%= h.wolf.profile_image %>"><br>
+				<img src="<%= h.howl_image %>"><br>
 				<%= h.message %>
 			</li>
+				<p><%= link_to "Edit Howls", edit_howl_path(h) %></p>
+				<p><%= link_to "Delete Howls", howl_path(h), :method=>:delete %></p>
 		<% end %>
 	</ul>
 <% else %>
 	<p>Sorry.  No howls here!</p>
 <% end %>
 <p><%= link_to "New Posting", new_wolf_path %></p>
-
-
-
