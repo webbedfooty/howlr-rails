@@ -3,13 +3,20 @@
 @import "materialize/components/color";
 $primary-color: color("blue", "lighten-2") !default;
 
+* {
+	color: #212121;
+}
+
+p {
+	font-size: 12px;
+}
 
 .container .row {
 	margin: 0;
 }
 
 .wolfProfileImageSmall {
-	max-width:50px;
+	max-width:40px;
 }
 
 .wolfProfileImageBig {
@@ -17,6 +24,30 @@ $primary-color: color("blue", "lighten-2") !default;
 	border-radius: 50%;
 }
 
+.secondary-content {
+	color: #757575;
+	font-weight: 300;
+}
+
 i {
 	width: 14px;
+}
+
+.howlsIndex .btn {
+	padding-left:20px;
+	padding-right:20px;
+	margin-top:20px;
+	font-size: 12px;
+}
+
+.indexTitle h5{
+	margin-top: 22px;
+	margin-bottom: 22px;
+}
+
+.likes {
+	margin-left:15px;
+}
+
+.likes, .howlBack {
 }
