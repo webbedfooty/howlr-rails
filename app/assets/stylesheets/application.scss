@@ -15,13 +15,16 @@ p {
 	margin: 0;
 }
 
+.btn {
+	height: 28px;
+}
+
 .wolfProfileImageSmall {
 	max-width:40px;
 }
 
 .wolfProfileImageBig {
-	max-width:100px;
-	border-radius: 50%;
+	max-width:150px;
 }
 
 .secondary-content {
@@ -40,9 +43,27 @@ i {
 	font-size: 12px;
 }
 
+.newPackBtn {
+	width: auto;
+	font-size:12px;
+}
+
+.howlsEditDelete {
+	width:55px;	
+}
+
 .indexTitle h5{
 	margin-top: 22px;
 	margin-bottom: 22px;
+}
+
+ul.collection li.collection-item.avatar{
+	min-height: auto;
+}
+
+.numHowls {
+	font-size: 11px;
+	font-weight: 400;
 }
 
 .likes {
@@ -50,4 +71,8 @@ i {
 }
 
 .likes, .howlBack {
+}
+
+.title a{
+	color: #212121;
 }

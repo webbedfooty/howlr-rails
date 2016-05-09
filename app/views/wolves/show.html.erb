@@ -5,15 +5,27 @@
 		    <p><%= flash[:notice] %></p>
 		  </div>
 		<% end %>
-			<div class="col sm4">
-				<img class="wolfProfileImageBig" src="<%= @wolf.profile_image %>">
-			</div>
-			<div class="col s8 right">
-				<h4><%= @wolf.name %></h4>
-				<p><%= @wolf.bio %></p>
-			</div>
 		</div>
+		<ul class="collection">
+			<li class="col sm4 collection-item avatar">
+				<img class="wolfProfileImageBig circle" src="<%= @wolf.profile_image %>">
+			<span class="title">
+				<%= @wolf.name %>
+			</span>
+			<span class="secondary-content">
+				<%= link_to edit_wolf_path(@wolf) do %>
+			  	<i class="tiny material-icons orange-text text-lighten-2">edit_mode</i>
+				<% end %>
+				<%= link_to wolf_path(@wolf), method: :delete do %>
+			  	<i class="tiny material-icons orange-text text-lighten-2">delete</i>
+				<% end %>
+			</span>
+			<p><%= @wolf.bio %></p>
+			</li>
+		</ul>
 		<div class="row">
-			<p><%= link_to "Edit Wolves", edit_wolf_path(@wolf) %></p>
-			<p><%= link_to "Delete Wolves", wolf_path(@wolf), :method=>:delete %></p>
-			<p><%= link_to "Go To Pack", :wolves %></p>
+			<%= link_to :wolves do %>
+				<i class="waves-effect right waves-light newPackBtn btn  red darken-3">Return To Pack</i>
+			<% end %>
+		</div>
+	</div>
