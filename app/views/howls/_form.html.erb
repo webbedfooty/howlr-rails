@@ -31,7 +31,7 @@
 
   <div class="input-field col xs12 sr12 m12">
 <!-- DROPDOWN PICK A WOLF -->
-    <select class="icons" id="wolf" name="wolf_id">
+    <select class="icons" id="wolf" name="howl[wolf_id]">
       <option value="" disabled selected>Who's Howling?</option>
       <% @wolves.each do |w| %>
         <option value="<%= w.id %>" data-icon="<%= w.profile_image %>" class="circle right">
@@ -42,7 +42,7 @@
   </div><br><br>
 
 
-  <div class="col sm12">
+  <div class="col sm12 ">
     <span class="waves-effect right waves-light newPackBtn btn  red darken-3">
       <%= h.submit %>
     </span>
