@@ -34,15 +34,12 @@
     <select class="icons" id="wolf" name="wolf_id">
       <option value="" disabled selected>Who's Howling?</option>
       <% @wolves.each do |w| %>
-        <option value="<%= w.id %>" data-icon="<%= w.picture_url %>" class="circle right">
-          <%= w.name %>
+        <option value="<%= w.id %>" data-icon="<%= w.profile_image %>" class="circle right">
+          <span class="left"><%= w.name %></span>
         </option>
       <% end %>
     </select>
-    <label>Who's Howling?</label>
   </div><br><br>
-
-  </div>
 
 
   <div class="col sm12">

@@ -11,6 +11,8 @@ class HowlsController < ApplicationController
 
   def create
     @howl = Howl.new(howl_params)
+    @wolves = Wolf.all
+    @wolf = Wolf.find_by_id(params[:id])
     if @howl.save
       redirect_to :howls, notice: "Success"
     else
@@ -22,11 +24,14 @@ class HowlsController < ApplicationController
 
   def show
     @howl = Howl.find(params[:id])
-    @wolf = Wolf.find(params[:id])
+    @wolves = Wolf.all
+    @wolf = Wolf.find_by_id(params[:id])
   end
 
   def update
     @howl = Howl.find(params[:id])
+    @wolves = Wolf.all
+    @wolf = Wolf.find_by_id(params[:id])
     if @howl.update_attributes(howl_params)
       redirect_to :howls, notice: "Successfully Updated!!!!"
     else
