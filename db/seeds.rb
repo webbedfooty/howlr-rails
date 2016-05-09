@@ -6,12 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Wolf.create(name: "Aaron Carter", profile_image: "https://s3-us-west-2.amazonaws.com/wolfimages/wolf-1.jpg", bio: "Now walking on the front streets")
-Wolf.create!(name:"John", profile_image:"https://s3-us-west-2.amazonaws.com/wolfimages/wolf-1.jpg", bio:"RAAAARRRRRR")
 Wolf.create!(name:"Paul", profile_image:"https://s3-us-west-2.amazonaws.com/wolfimages/wolf-2.jpg", bio:"Howdy pals.")
 Wolf.create!(name:"George", profile_image:"https://s3-us-west-2.amazonaws.com/wolfimages/wolf-3.jpg", bio:"Beep Boop Bop Beep Boop Boop")
 Wolf.create!(name:"Ringo", profile_image:"https://s3-us-west-2.amazonaws.com/wolfimages/wolf-4.jpg", bio:"Ahhhhooooooooo")
 Wolf.create!(name:"Delores", profile_image:"https://s3-us-west-2.amazonaws.com/wolfimages/wolf-5.jpg", bio:"Here's a bio about me...")
+Wolf.create(name: "Aaron Carter", profile_image: "https://s3-us-west-2.amazonaws.com/wolfimages/wolf-1.jpg", bio: "Now walking on the front streets with his brother")
+Wolf.create!(name:"Patrick", profile_image:"https://images-na.ssl-images-amazon.com/images/I/71Gqgpl35UL._SY355_.jpg", bio:"Enjoys wolfwear, nightgowns, and football")
 
 Howl.create!(message:"Aroooooooooo!!", wolf_id: 1, howl_image: "https://s3-us-west-2.amazonaws.com/wolfimages/share-1.jpg")
 Howl.create!(message:"Pretty cool project. As far as things go.", wolf_id: 1)

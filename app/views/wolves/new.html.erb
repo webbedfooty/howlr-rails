@@ -1,9 +1,11 @@
-<h1>Wolves new</h1>
+<div class="container">
+	<h5>Wolves new</h5>
 
-<% if flash[:alert] %>
-  <div class="flash alert">
-    <p><%= flash[:alert] %></p>
-  </div>
-<% end %>
+	<% if flash[:alert] %>
+	  <div class="flash alert">
+	    <p><%= flash[:alert] %></p>
+	  </div>
+	<% end %>
 
-<%= render "form" %>
+	<%= render "form" %>
+</div>

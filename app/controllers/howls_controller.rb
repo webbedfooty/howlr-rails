@@ -5,6 +5,8 @@ class HowlsController < ApplicationController
 
   def new
     @howl = Howl.new
+    @wolves = Wolf.all
+    @wolf = Wolf.find_by_id(params[:id])
   end
 
   def create

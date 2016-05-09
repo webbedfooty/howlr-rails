@@ -30,12 +30,18 @@
 
 
   <div class="input-field col xs12 sr12 m12">
-    <div class="active">
-      <%= h.label :wolf_id %>
-    </div>
-    <div class="validate">
-      <%= h.text_field :wolf_id %>
-    </div>
+<!-- DROPDOWN PICK A WOLF -->
+    <select class="icons" id="wolf" name="wolf_id">
+      <option value="" disabled selected>Who's Howling?</option>
+      <% @wolves.each do |w| %>
+        <option value="<%= w.id %>" data-icon="<%= w.picture_url %>" class="circle right">
+          <%= w.name %>
+        </option>
+      <% end %>
+    </select>
+    <label>Who's Howling?</label>
+  </div><br><br>
+
   </div>
 
 
